@@ -11,10 +11,10 @@ use Exception;
 class OrdersController extends Controller
 {
     public static $orders = [
-        ["id"=>"1", "date"=>"TV", "total"=>"1000"],
-        ["id"=>"2", "date"=>"iPhone", "total"=>"2000"],
-        ["id"=>"3", "date"=>"Chromecast", "total"=>"3000"],
-        ["id"=>"4", "date"=>"Glasses", "total"=>"4000"]
+        ["id"=>"1", "date"=>"2024-01-01", "total"=>"1000"],
+        ["id"=>"2", "date"=>"2024-01-02", "total"=>"2000"],
+        ["id"=>"3", "date"=>"2024-01-03", "total"=>"3000"],
+        ["id"=>"4", "date"=>"2024-01-04", "total"=>"4000"]
     ];
 
 
@@ -61,7 +61,7 @@ class OrdersController extends Controller
     {
         $request->validate([
             "id" => "required",
-            "date" => ["required", "numeric", "gt:0"],
+            "date" => ["required", "date"],
             "total" => ["required", "numeric", "gt:0"]
         ]);
         dd($request->all());

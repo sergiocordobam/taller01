@@ -11,6 +11,9 @@
       <div class="card-body">
            Order total: {{ $viewData["orders"]["total"] }}
       </div>
+      <div class="card-body">
+           Order date: {{ $viewData["orders"]["date"] }}
+      </div>
     </div>
   </div>
 </div>
