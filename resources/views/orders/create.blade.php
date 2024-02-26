@@ -17,7 +17,6 @@
 
             <form method="POST" action="{{ route('orders.save') }}">
               @csrf
-              <input type="text" class="form-control mb-2" placeholder="Enter id" name="id" value="{{ old('id') }}" />
               <input type="date" class="form-control mb-2" placeholder="Enter date" name="date" value="{{ old('date') }}" />
               <input type="text" class="form-control mb-2" placeholder="Enter total" name="total" value="{{ old('total') }}" />
               <input type="submit" class="btn btn-primary" value="Send" />

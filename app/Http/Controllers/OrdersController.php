@@ -50,21 +50,20 @@ class OrdersController extends Controller
         return view('orders.create')->with("viewData",$viewData);
     }
 
-    public function save(Request $request)
+    public function save(Request $request) 
     {
         $request->validate([
-            "id" => "required",
             "date" => ["required", "date"],
             "total" => ["required", "numeric", "gt:0"]
         ]);
-        dd($request->all());
+        //dd($request->all());
         //here will be the code to call the model and save it to the database
-        //$viewData = []; //to be sent to the view
-        //$viewData["title"] = "Order created";
-        //$viewData["description"] = "Order created";
-        //Orders::create($request->only(["id","date","total"]));
+        $viewData = []; //to be sent to the view
+        $viewData["title"] = "Order created";
+        $viewData["description"] = "Order created";
+        Order::create($request->only(["date","total"]));
         //return view('orders.save')->with("viewData", $viewData);
 
-        //return back();
+        return back();
     }
 }
