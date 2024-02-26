@@ -4,26 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\Order;
 //use App\Models\Orders;
 use Illuminate\Http\RedirectResponse;
 use Exception;
  
 class OrdersController extends Controller
 {
-    public static $orders = [
-        ["id"=>"1", "date"=>"2024-01-01", "total"=>"1000"],
-        ["id"=>"2", "date"=>"2024-01-02", "total"=>"2000"],
-        ["id"=>"3", "date"=>"2024-01-03", "total"=>"3000"],
-        ["id"=>"4", "date"=>"2024-01-04", "total"=>"4000"]
-    ];
-
-
     public function index(): View
     {
         $viewData = [];
         $viewData["title"] = "Orders - Online Store";
         $viewData["subtitle"] =  "List of orders";
-        $viewData["orders"] = OrdersController::$orders;
+        $viewData["orders"] = Order::all();
         return view('orders.index')->with("viewData", $viewData);
     }
 
@@ -39,7 +32,7 @@ class OrdersController extends Controller
         */
 
         try{
-            $order = OrdersController::$orders[$id-1];
+            $order = Order::findOrFail($id);
             $viewData["title"] = $order["id"]." - TemporalAdventures";
             $viewData["subtitle"] =  $order["id"]." - Order total";
             $viewData["orders"] = $order;
