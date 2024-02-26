@@ -66,4 +66,15 @@ class OrdersController extends Controller
 
         return back();
     }
+
+    public function delete(string $id) : RedirectResponse
+    {
+        try{
+            $order = Order::findOrFail($id);
+            $order->delete();
+        } catch (Exception $e){
+            return redirect('/');
+        }
+        return redirect('/orders');
+    }
 }
