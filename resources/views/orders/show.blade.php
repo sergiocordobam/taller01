@@ -8,11 +8,14 @@
       <img src="https://laravel.com/img/logotype.min.svg" class="img-fluid rounded-start">
     </div>
     <div class="col-md-8">
-      <div class="card-body">
-           Order total: {{ $viewData["orders"]["total"] }}
+    <div class="card-body">
+           Order id: {{ $viewData["orders"]["id"] }}
       </div>
       <div class="card-body">
            Order date: {{ $viewData["orders"]["date"] }}
+      </div>
+      <div class="card-body">
+           Order total: {{ $viewData["orders"]["total"] }}
       </div>
     </div>
   </div>
