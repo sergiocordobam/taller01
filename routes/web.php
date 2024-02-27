@@ -18,6 +18,6 @@ Route::get('/orders', 'App\Http\Controllers\OrdersController@index')->name("orde
 Route::get('/orders/create', 'App\Http\Controllers\OrdersController@create')->name("orders.create");
 Route::post('/orders/save', 'App\Http\Controllers\OrdersController@save')->name("orders.save");
 Route::get('/orders/{id}', 'App\Http\Controllers\OrdersController@show')->name("orders.show");
-Route::post('/orders/delete', 'App\Http\Controllers\OrdersController@delete')->name("orders.delete");
+Route::delete('/orders/{id}', 'App\Http\Controllers\OrdersController@delete')->name("orders.delete");
 
 

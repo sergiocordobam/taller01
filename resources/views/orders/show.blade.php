@@ -18,8 +18,9 @@
            <strong>Order total:</strong> {{ $viewData["orders"]["total"] }}
       </div>
       <div class="card-body">
-           <form method="POST" action="{{ route('orders.delete', ['order'=> $viewData['orders']['id']]) }}">
+           <form method="POST" action="{{ route('orders.delete', ['id'=> $viewData['orders']['id']]) }}">
                 @csrf
+                @method('DELETE')
                 <input type="hidden" name="id" value="{{ $viewData["orders"]["id"] }}" />
                 <input type="submit" class="btn btn-primary" value="Delete" />
            </form>
