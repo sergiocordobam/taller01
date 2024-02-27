@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Home Page - Online Store')
+@section('title', 'Home Page - TemporalAdventures')
 @section('content')
 <div class="text-center">
   Orders application

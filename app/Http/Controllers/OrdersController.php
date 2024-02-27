@@ -14,7 +14,7 @@ class OrdersController extends Controller
     public function index(): View
     {
         $viewData = [];
-        $viewData["title"] = "Orders - Online Store";
+        $viewData["title"] = "Orders - TemporalAdventures";
         $viewData["subtitle"] =  "List of orders";
         $viewData["orders"] = Order::all();
         return view('orders.index')->with("viewData", $viewData);
@@ -45,7 +45,7 @@ class OrdersController extends Controller
     public function create(): View
     {
         $viewData = []; //to be sent to the view
-        $viewData["title"] = "Create order";
+        $viewData["title"] = "Create order - TemporalAdventures";
 
         return view('orders.create')->with("viewData",$viewData);
     }
