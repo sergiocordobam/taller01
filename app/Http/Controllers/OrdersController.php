@@ -60,11 +60,11 @@ class OrdersController extends Controller
         //here will be the code to call the model and save it to the database
         $viewData = []; //to be sent to the view
         $viewData["title"] = "Order created";
-        $viewData["description"] = "Order created";
+        $viewData["description"] = "Order created successfully";
         Order::create($request->only(["date","total"]));
-        //return view('orders.save')->with("viewData", $viewData);
+        return view('orders.save')->with("viewData", $viewData);
 
-        return back();
+        //return back();
     }
 
     public function delete(string $id) : RedirectResponse
