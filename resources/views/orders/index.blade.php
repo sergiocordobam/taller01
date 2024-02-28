@@ -9,7 +9,10 @@
       <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card">
       <div class="card-body text-center">
         <a href="{{ route('orders.show', ['id'=> $order["id"]]) }}"
-          class="btn bg-primary text-white">Order #{{ $order["id"] }}</a>
+          class="btn bg-primary text-white">
+          <div>Order #{{ $order["id"] }}</div>
+          <div>Date: {{ $order["date"] }}</div>
+        </a>
       </div>
     </div>
   </div>

@@ -1,0 +1,14 @@
+Instrucciones para correr el proyecto
+
+1. En XAMPP correr las instancias de Apache y MySQL
+2. Entrar al admin de MySQL
+3. Crear una nueva base de datos llamada "taller01"
+4. En el archivo .env cambia el nombre de la base de datos a "taller01" y verifica
+que tu usuario y contraseña de phpmyadmin sean los correctos
+5. Para crear las migraciones a la base de datos ejecuta el siguiente comando:
+"php artisan migrate"
+6. Ejecuta el siguiente comando para llenar la base de datos con datos aleatorios:
+"php artisan db:seed"
+7. Corre el servidor con el siguiente comando "php artisan serve"
+8. Dale click en la parte superior derecha en "Orders" para ver las ordenes creadas con los
+datos aleatorios o en "Create" para crear una nueva orden
